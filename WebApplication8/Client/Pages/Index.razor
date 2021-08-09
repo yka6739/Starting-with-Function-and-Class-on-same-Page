@@ -1,0 +1,63 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+@*<h1>Hello :@up(Name)</h1>
+<h2>Hello: @up(Name1)</h2>
+<h3>Hello: @Lo(Name2)</h3>*@
+<h1>
+    Hello: @UppercaseText.Uppercase(Name);
+</h1>
+<h1>
+    Hello: @UppercaseText.Uppercase(Name1);
+</h1>
+<h1>
+    Hello: @LowercaseText.Lowercase(Name2);
+</h1>
+
+<p>
+    Hello: @Changecase.Lowercase1(Name2);
+           @Changecase.Uppercase2(Name);   
+</p>
+
+
+
+@code
+{
+    string Name = "Reenam";
+    string Name1 = "Sumit Singh";
+    string Name2 = "AMITKUMAR";
+
+    public class UppercaseText
+    {
+        public static string Uppercase(string value) => value.ToUpper();
+
+
+    }
+
+    public class LowercaseText
+    {
+        public static string Lowercase(string value) => value.ToLower();
+
+    }
+    public class Changecase
+    {
+        public static string Lowercase1(string value) => value.ToLower();
+        public static string Uppercase2(string value) => value.ToUpper();
+    }
+
+
+    //string Name = "Reenam";
+    //string Name1 = "Sumit Singh";
+    //string up(string value) => value.ToUpper();
+
+
+
+    //string Name2 = "AMITKUMAR";
+    //string Lo(string value) => value.ToLower();
+    }
+
+
